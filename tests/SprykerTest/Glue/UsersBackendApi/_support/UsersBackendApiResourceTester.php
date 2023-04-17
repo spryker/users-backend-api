@@ -8,12 +8,13 @@
 namespace SprykerTest\Glue\UsersBackendApi;
 
 use Codeception\Actor;
+use Spryker\Glue\UsersBackendApi\UsersBackendApiResourceInterface;
 
 /**
  * Inherited Methods
  *
- * @method void wantToTest($text)
  * @method void wantTo($text)
+ * @method void wantToTest($text)
  * @method void execute($callable)
  * @method void expectTo($prediction)
  * @method void expect($prediction)
@@ -25,7 +26,15 @@ use Codeception\Actor;
  *
  * @SuppressWarnings(PHPMD)
  */
-class UsersBackendApiTester extends Actor
+class UsersBackendApiResourceTester extends Actor
 {
-    use _generated\UsersBackendApiTesterActions;
+    use _generated\UsersBackendApiResourceTesterActions;
+
+    /**
+     * @return \Spryker\Glue\UsersBackendApi\UsersBackendApiResourceInterface
+     */
+    public function getResource(): UsersBackendApiResourceInterface
+    {
+        return $this->getLocator()->usersBackendApi()->resource();
+    }
 }

@@ -5,14 +5,14 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace Spryker\Glue\UsersBackendApi\Processor\Expander;
+namespace Spryker\Glue\UsersBackendApi\Processor\Filter;
 
-interface UserByWarehouseUserAssignmentResourceRelationshipExpanderInterface
+interface WarehouseUserAssignmentResourceFilterInterface
 {
     /**
      * @param list<\Generated\Shared\Transfer\GlueResourceTransfer> $glueResourceTransfers
      *
-     * @return void
+     * @return list<\Generated\Shared\Transfer\GlueResourceTransfer>
      */
-    public function addUserRelationships(array $glueResourceTransfers): void;
+    public function filterWarehouseUserAssignmentResources(array $glueResourceTransfers): array;
 }
